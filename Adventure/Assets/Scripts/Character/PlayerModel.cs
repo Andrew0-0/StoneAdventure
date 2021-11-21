@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 public class PlayerModel
 {
@@ -10,7 +10,8 @@ public class PlayerModel
     public SpriteRenderer sprite;
     public Animator charAnimator;
     //public readonly float MaxSpeed;
-    //public readonly float Acceleration;
+    //public readonly float Acceleration;you dyrak?
+
 
     public PlayerModel(float Speed, float JumpForce, Rigidbody2D Rb, bool on_ground, SpriteRenderer Sprite, Animator CharAnimator)
     {
