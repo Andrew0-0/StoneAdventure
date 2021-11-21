@@ -3,14 +3,13 @@ using UnityEngine;
 public class PlayerModel
 {
     public event Action<Vector2> OnMove;
+    public event Action<Vector2> OnJump;
     public float speed;
     public Rigidbody2D rb;
     public float jumpForce;
     public bool onGround;
     public SpriteRenderer sprite;
     public Animator charAnimator;
-    //public readonly float MaxSpeed;
-    //public readonly float Acceleration;
 
     public PlayerModel(float Speed, float JumpForce, Rigidbody2D Rb, bool on_ground, SpriteRenderer Sprite, Animator CharAnimator)
     {
@@ -25,6 +24,11 @@ public class PlayerModel
     public void Move(Vector2 vector2)
     {
         OnMove?.Invoke(vector2);
+    }
+    
+    public void Jump(Vector2 vector2)
+    {
+        OnJump?.Invoke(vector2);
     }
 }
 
