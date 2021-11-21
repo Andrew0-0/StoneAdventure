@@ -20,10 +20,30 @@ public class PlayerPresenter : IController
     {
         _model.OnMove -= OnMove;
     }
+    
+    public void Attach1()
+    {
+        _model.OnJump += OnJump;
+    }
+
+    private void OnJump(Vector2 obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Detach1()
+    {
+        _model.OnJump -= OnJump;
+    }
 
     private void OnMove(Vector2 vector2)
     {
         _component.Move(vector2 * _model.speed);
+    }
+
+    private void OnJump(float jumpForce, Rigidbody2D rb)
+    {
+        _component.Jump(jumpForce, rb);
     }
 }
 

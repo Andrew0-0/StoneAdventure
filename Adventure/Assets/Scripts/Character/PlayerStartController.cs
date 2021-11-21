@@ -14,6 +14,7 @@ namespace Character
 
         private float _horizontal;
         private float _vertical;
+        private bool _jump;
 
         void Start()
         {
@@ -23,13 +24,17 @@ namespace Character
             _model = new PlayerModel(4.0f, 100.0f, Rb, onGrounD, sprite, charAnimator);
             _playerPresenter = new PlayerPresenter(_model, _component);
             _playerPresenter.Attach();
+            _playerPresenter.Attach1();
         }
 
         void Update()
         {
             _horizontal = Input.GetAxis("Horizontal");
             _vertical = Input.GetAxis("Vertical");
-            _model.Move(new Vector3(_horizontal,0,_vertical));
+            //_jump = Input.GetKeyDown("Space");
+            _model.Move(new Vector2(_horizontal,_vertical));
+            //_model.Jump(_jump);
+            //_model.Jump(new Vector2(_horizontal, _jump));
         }
     }
 }

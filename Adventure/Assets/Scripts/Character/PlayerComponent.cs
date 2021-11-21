@@ -5,4 +5,9 @@ public class PlayerComponent : MonoBehaviour
     {
         transform.Translate(speed*Time.deltaTime);
     }
+
+    public void Jump(float jumpForce, Rigidbody2D rb)
+    {
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
 }
